@@ -19,6 +19,7 @@
         <td><img src = "<%= pokemon.photo %>" height = "100" width = "100"/></td>
       <td><%= button_to 'Show', pokemon, :method => :get %></td>
         <td><%= button_to 'Edit', edit_pokemon_path(pokemon), :method => :get %></td>
+        <%= button_to 'Destroy', "/pokemons/#{@pokemon.id}/destroy", method: :delete, data: { confirm: 'Are you sure?' }, :method => :get%>
         
       </tr>
     <% end %>
@@ -27,4 +28,4 @@
 
 <br>
 
-<%= button_to 'New Pokemon', new_pokemon_path, :method => :get  %>
+<%= button_to 'New Pokemon', new_pokemon_path %>
