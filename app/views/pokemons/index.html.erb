@@ -1,0 +1,46 @@
+<h1>Listing pokemons</h1>
+
+<table>
+  <thead>
+    <tr>
+
+      <th>Name</th>
+      <th>Nature</th>
+      <th>Photo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pokemons.each do |pokemon| %>
+      <tr>
+        <td><%= pokemon.name %></td>
+        <td><%= pokemon.nature %></td>
+<div class='panel' id = 'nav' >
+  <ul class='list-inline'>
+    <li class='buttons-align'>
+      <span class = 'btn-group pull-right'>
+                              <img src = "<%= pokemon.photo %>" height = "100" width = "100"/>
+                             
+                            <button  class = 'btn btn-primary'>
+                              <%= link_to 'Show', pokemon, :method => :get %>
+                            </button>
+                             <button  class = 'btn btn-primary'>
+                              <%= link_to 'Edit', edit_pokemon_path(pokemon), :method => :get %>
+                            </button>
+                            <button  class = 'btn btn-primary'>
+                              <%= link_to 'Destroy', pokemon, method: :delete, data: { confirm: 'Are you sure?' } %>
+                            </button>
+        </span>
+    </li>     
+  </ul>
+</div>
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= button_to 'New Pokemon', new_pokemon_path %>

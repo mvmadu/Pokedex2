@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @pokemon.name %>
+</p>
+
+<p>
+  <strong>Nature:</strong>
+  <%= @pokemon.nature %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @pokemon.photo %>
+</p>
+<div class='panel' id = 'nav' >
+  <ul class='list-inline'>
+    <li class='buttons-align'>
+      <span class = 'btn-group pull-right'>
+      <button class = 'btn btn-primary'> 
+		<%= link_to 'Edit', edit_pokemon_path(@pokemon) %> 
+		</button>
+		<button class = 'btn btn-primary'> 
+		<%= link_to 'Back', pokemons_path %>
+		</button>
+		  </span>
+    </li>     
+  </ul>
+</div>
+	
