@@ -1,8 +1,10 @@
+
 Rails.application.routes.draw do
   resources :pokemons
       match '/pokemosn/:id/show', to: 'pokemosn#show', via: 'get'
       match '/pokemons/:id/edit', to: 'pokemosn#edit', via: 'get'
       match '/pokemons/:id/destroy', to: 'pokemosn#destroy', via: 'get'
+      match '/pokemons/new', to: 'pokemosn#new', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

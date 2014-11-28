@@ -16,18 +16,7 @@
   <strong>Photo:</strong>
   <%= @pokemon.photo %>
 </p>
-<div class='panel' id = 'nav' >
-  <ul class='list-inline'>
-    <li class='buttons-align'>
-      <span class = 'btn-group pull-right'>
-      <button class = 'btn btn-primary'> 
-		<%= link_to 'Edit', edit_pokemon_path(@pokemon) %> 
-		</button>
-		<button class = 'btn btn-primary'> 
-		<%= link_to 'Back', pokemons_path %>
-		</button>
-		  </span>
-    </li>     
-  </ul>
-</div>
+
+<%= button_to 'Edit', edit_pokemon_path(@pokemon), :method => :get  %> 
+<%= button_to 'Back', pokemons_path, :method => :get  %>
 	

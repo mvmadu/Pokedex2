@@ -16,31 +16,15 @@
       <tr>
         <td><%= pokemon.name %></td>
         <td><%= pokemon.nature %></td>
-<div class='panel' id = 'nav' >
-  <ul class='list-inline'>
-    <li class='buttons-align'>
-      <span class = 'btn-group pull-right'>
-                              <img src = "<%= pokemon.photo %>" height = "100" width = "100"/>
-                             
-                            <button  class = 'btn btn-primary'>
-                              <%= link_to 'Show', pokemon, :method => :get %>
-                            </button>
-                             <button  class = 'btn btn-primary'>
-                              <%= link_to 'Edit', edit_pokemon_path(pokemon), :method => :get %>
-                            </button>
-                            <button  class = 'btn btn-primary'>
-                              <%= link_to 'Destroy', pokemon, method: :delete, data: { confirm: 'Are you sure?' } %>
-                            </button>
-        </span>
-    </li>     
-  </ul>
-</div>
+        <td><img src = "<%= pokemon.photo %>" height = "100" width = "100"/></td>
+      <td><%= button_to 'Show', pokemon, :method => :get %></td>
+        <td><%= button_to 'Edit', edit_pokemon_path(pokemon), :method => :get %></td>
+        
       </tr>
-
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= button_to 'New Pokemon', new_pokemon_path %>
+<%= button_to 'New Pokemon', new_pokemon_path, :method => :get  %>
